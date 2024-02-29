@@ -335,7 +335,7 @@ class AsyncWebSocket: public AsyncWebHandler {
     ESPAsyncWebServer::LinkedList<AsyncWebSocketMessageBuffer *> _buffers;
     void _cleanBuffers(); 
 
-    AsyncWebSocketClientESPAsyncWebServer::LinkedList getClients() const;
+    AsyncWebSocketClientLinkedList getClients() const;
 };
 
 //WebServer response to authenticate the socket and detach the tcp client from the web server request
