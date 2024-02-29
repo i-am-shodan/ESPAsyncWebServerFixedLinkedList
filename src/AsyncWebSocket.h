@@ -249,7 +249,7 @@ class AsyncWebSocket: public AsyncWebHandler {
     typedef ESPAsyncWebServer::LinkedList<AsyncWebSocketClient *> AsyncWebSocketClientLinkedList;
   private:
     String _url;
-    AsyncWebSocketClientESPAsyncWebServer::LinkedList _clients;
+    AsyncWebSocketClientLinkedList _clients;
     uint32_t _cNextId;
     AwsEventHandler _eventHandler;
     bool _enabled;
