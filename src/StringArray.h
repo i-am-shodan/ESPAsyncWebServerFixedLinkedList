@@ -24,6 +24,7 @@
 #include "stddef.h"
 #include "WString.h"
 
+namespace ESPAsyncWebServer{
 template <typename T>
 class LinkedListNode {
     T _value;
@@ -195,7 +196,7 @@ public:
     return false;
   }
 };
-
+}
 
 
 
