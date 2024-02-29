@@ -165,8 +165,8 @@ class AsyncWebSocketClient {
     uint32_t _clientId;
     AwsClientStatus _status;
 
-    LinkedList<AsyncWebSocketControl *> _controlQueue;
-    LinkedList<AsyncWebSocketMessage *> _messageQueue;
+    ESPAsyncWebServer::LinkedList<AsyncWebSocketControl *> _controlQueue;
+    ESPAsyncWebServer::LinkedList<AsyncWebSocketMessage *> _messageQueue;
 
     uint8_t _pstate;
     AwsFrameInfo _pinfo;
@@ -246,10 +246,10 @@ typedef std::function<void(AsyncWebSocket * server, AsyncWebSocketClient * clien
 //WebServer Handler implementation that plays the role of a socket server
 class AsyncWebSocket: public AsyncWebHandler {
   public:
-    typedef LinkedList<AsyncWebSocketClient *> AsyncWebSocketClientLinkedList;
+    typedef ESPAsyncWebServer::LinkedList<AsyncWebSocketClient *> AsyncWebSocketClientESPAsyncWebServer::LinkedList;
   private:
     String _url;
-    AsyncWebSocketClientLinkedList _clients;
+    AsyncWebSocketClientESPAsyncWebServer::LinkedList _clients;
     uint32_t _cNextId;
     AwsEventHandler _eventHandler;
     bool _enabled;
@@ -332,10 +332,10 @@ class AsyncWebSocket: public AsyncWebHandler {
     //  messagebuffer functions/objects. 
     AsyncWebSocketMessageBuffer * makeBuffer(size_t size = 0); 
     AsyncWebSocketMessageBuffer * makeBuffer(uint8_t * data, size_t size); 
-    LinkedList<AsyncWebSocketMessageBuffer *> _buffers;
+    ESPAsyncWebServer::LinkedList<AsyncWebSocketMessageBuffer *> _buffers;
     void _cleanBuffers(); 
 
-    AsyncWebSocketClientLinkedList getClients() const;
+    AsyncWebSocketClientESPAsyncWebServer::LinkedList getClients() const;
 };
 
 //WebServer response to authenticate the socket and detach the tcp client from the web server request
