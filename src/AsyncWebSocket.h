@@ -246,7 +246,7 @@ typedef std::function<void(AsyncWebSocket * server, AsyncWebSocketClient * clien
 //WebServer Handler implementation that plays the role of a socket server
 class AsyncWebSocket: public AsyncWebHandler {
   public:
-    typedef ESPAsyncWebServer::LinkedList<AsyncWebSocketClient *> AsyncWebSocketClientESPAsyncWebServer::LinkedList;
+    typedef ESPAsyncWebServer::LinkedList<AsyncWebSocketClient *> AsyncWebSocketClientLinkedList;
   private:
     String _url;
     AsyncWebSocketClientESPAsyncWebServer::LinkedList _clients;
