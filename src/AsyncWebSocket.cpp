@@ -1226,7 +1226,7 @@ void AsyncWebSocket::_cleanBuffers()
   }
 }
 
-AsyncWebSocket::AsyncWebSocketClientESPAsyncWebServer::LinkedList AsyncWebSocket::getClients() const {
+AsyncWebSocketClientLinkedList AsyncWebSocket::getClients() const {
   return _clients;
 }
 
